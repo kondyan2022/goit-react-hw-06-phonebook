@@ -1,7 +1,7 @@
 import UList from './ContactList.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { getContacts, getFilter } from 'components/redux/selectors';
-import { delContact } from 'components/redux/contactsSlice';
+import { getContacts, getFilter } from 'redux/selectors';
+import { delContact } from 'redux/contactsSlice';
 
 const ContactList = () => {
   const filter = useSelector(getFilter);

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import AddForm from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { getContacts } from 'components/redux/selectors';
-import { addContact } from 'components/redux/contactsSlice';
+import { getContacts } from 'redux/selectors';
+import { addContact } from 'redux/contactsSlice';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
@@ -70,6 +70,5 @@ const ContactForm = () => {
     </AddForm>
   );
 };
-// ContactForm.propTypes = { onSubmit: PropTypes.func };
 
 export default ContactForm;
