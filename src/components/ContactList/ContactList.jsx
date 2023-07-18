@@ -1,8 +1,7 @@
 import UList from './ContactList.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContacts, getFilter } from 'components/redux/selectors';
-import { useEffect } from 'react';
-import { LOCAL_STORAGE_KEY, delContact } from 'components/redux/contactsSlice';
+import { delContact } from 'components/redux/contactsSlice';
 
 const ContactList = () => {
   const filter = useSelector(getFilter);
@@ -15,10 +14,6 @@ const ContactList = () => {
           name.toLowerCase().includes(filter.toLowerCase())
         )
       : contacts;
-
-  useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
-  }, [contacts]);
 
   return (
     <UList>
